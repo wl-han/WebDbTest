@@ -57,52 +57,54 @@
     CBF110038_NextButton.Enabled = true;<br />
     if (newSelectedIndex == 0) { CBF110038_PreviousButton.Enabled = false; }<br /><p>
 
-    2.<br />
-    int itemCount = CBF110038_DDL1.Items.Count;<br />
-    int newSelectedIndex = Math.Min(CBF110038_DDL1.SelectedIndex + 10, itemCount - 1);<br />
-    CBF110038_DDL1.SelectedIndex = newSelectedIndex;<br />
-    CBF110038_NextButton.Enabled = newSelectedIndex < itemCount - 10;<br />
-    CBF110038_cambridge.Text += $"<a href='https://dictionary.cambridge.org/zht/詞典/英語-漢語-繁體/{CBF110038_DDL1.SelectedItem.Text}' target='_blank'>{CBF110038_DDL1.SelectedItem.Text}</a>" + "=>";<br />
-    CBF110038_cambridge.Text += $"{ CBF110038_DDL1.SelectedValue}";<br /><p>
+        2.<br />
+        int itemCount = CBF110038_DDL1.Items.Count;<br />
+        int newSelectedIndex = Math.Min(CBF110038_DDL1.SelectedIndex + 10, itemCount - 1);<br />
+        CBF110038_DDL1.SelectedIndex = newSelectedIndex;<br />
+        CBF110038_NextButton.Enabled = newSelectedIndex < itemCount - 10;<br />
+        CBF110038_cambridge.Text += $"<a href='https://dictionary.cambridge.org/zht/詞典/英語-漢語-繁體/{CBF110038_DDL1.SelectedItem.Text}' target='_blank'>{CBF110038_DDL1.SelectedItem.Text}</a>" + "=>";<br />
+        CBF110038_cambridge.Text += $"{ CBF110038_DDL1.SelectedValue}";<br />
+    <p>
 
-    <h3>程式碼說明</h3>
-    1.<br />
-    SelectedIndex是CBF110038_DDL1中當前選中項目的索引。索引是從0開始的，表示第一個項目。<br />
-    CBF110038_DDL1.SelectedIndex - 10表示當前選中項目的索引減去10。取得當前選中項目的前10個項目的索引。<br />
-    Math.Max(0, ...)是一個數學函式，它會返回兩個參數中的較大值。在這裡，用來確保新計算的索引不會小於0。<br />
-    如果SelectedIndex - 10小於0，則返回0，否則返回SelectedIndex - 10。<br />
-    最後，計算結果被賦值給newSelectedIndex變數。<br />
-    接著顯示第一筆的資料，並當點下後，NextButton設為可點選。<br />
-    當newSelectedIndex == 0時，CBF110038_PreviousButton設為不可點選。<br /><p>
-    2.<br />
-    計算當前選中項目的索引加上 10。取得當前選中項目的後 10 個項目的索引。<br />
-    CBF110038_DDL1.Items.Count - 1取得下拉列表中的項目總數，並減去 1。因為索引是從 0 開始的，所以最大的有效索引是項目總數減去 1。<br />
-    Math.Min(...)這個函式會返回兩個參數中的較小值。確保新計算的索引值不會超過下拉列表中的有效範圍。<br />
-    最後，計算結果被賦值給 newSelectedIndex 變數。<br />
-    接著顯示第一筆資料，當newSelectedIndex < itemCount - 10，將CBF110038_NextButton.Enabled依據前句所說true就啟用，false就關閉。
-    <h2>程式執行畫面</h2>
-    在這裡，你可以分享你的程式執行畫面，並解釋每個畫面的功能。
-    <h3>功能介紹</h3>
-    1.當點選刪除時，會詢問使用者確定刪除嗎?<br />
-    2.當點選編輯時，sentence欄位會充滿整個儲存格。<br />
-    3.當按下下一頁時，能夠顯示第一筆資料。<br />
-    4.當按下上一頁時，能夠顯示第一筆資料。<br />
-    5.當點選CBF110038_DDL1的項目時，會顯示其英文和中文。<br />
-    6.當點選測驗去時，能夠跳出題目。<br />
-    7.當題目完成後，能夠顯示其分數、結束及重玩。<br />
-    <h3>畫面展示</h3>
-    1.當點選刪除時<br /><img src="刪除資料之刪除訊息.png"><br />
-    2.當點選編輯時<br /><img src="欄位充滿.png"><br />
-    3.當按下下一頁時<br /><img src="當按下下一頁.png"><br />
-    4.當按下上一頁時<br /><img src="當按下上一頁.png"><br />
-    5.當點選CBF110038_DDL1的項目時<br /><img src="點選後顯示.png"><br />
-    6.當點選測驗去時<br /><img src="題目.png"><br />
-    7.當題目完成後<br /><img src="結束及重玩.png"><br />
-    <h2>個人心得與反思</h2>
-    在這裡，你可以分享你對於這次開發經驗的感想，以及你從中學到了什麼。
-    <h3>學習心得</h3>
-    學習到上述所提到的，雖然有些功能並沒有完整做出來，但我會繼續努力將其完成的。
-    <h3>未來展望</h3>
-    繼續努力，沒有完成的地方回去研究，將其想出來。
+        <h3>程式碼說明</h3>
+        1.<br />
+        SelectedIndex是CBF110038_DDL1中當前選中項目的索引。索引是從0開始的，表示第一個項目。<br />
+        CBF110038_DDL1.SelectedIndex - 10表示當前選中項目的索引減去10。取得當前選中項目的前10個項目的索引。<br />
+        Math.Max(0, ...)是一個數學函式，它會返回兩個參數中的較大值。在這裡，用來確保新計算的索引不會小於0。<br />
+        如果SelectedIndex - 10小於0，則返回0，否則返回SelectedIndex - 10。<br />
+        最後，計算結果被賦值給newSelectedIndex變數。<br />
+        接著顯示第一筆的資料，並當點下後，NextButton設為可點選。<br />
+        當newSelectedIndex == 0時，CBF110038_PreviousButton設為不可點選。<br />
+    <p>
+        2.<br />
+        計算當前選中項目的索引加上 10。取得當前選中項目的後 10 個項目的索引。<br />
+        CBF110038_DDL1.Items.Count - 1取得下拉列表中的項目總數，並減去 1。因為索引是從 0 開始的，所以最大的有效索引是項目總數減去 1。<br />
+        Math.Min(...)這個函式會返回兩個參數中的較小值。確保新計算的索引值不會超過下拉列表中的有效範圍。<br />
+        最後，計算結果被賦值給 newSelectedIndex 變數。<br />
+        接著顯示第一筆資料，當newSelectedIndex < itemCount - 10，將CBF110038_NextButton.Enabled依據前句所說true就啟用，false就關閉。
+        <h2>程式執行畫面</h2>
+        在這裡，你可以分享你的程式執行畫面，並解釋每個畫面的功能。
+        <h3>功能介紹</h3>
+        1.當點選刪除時，會詢問使用者確定刪除嗎?<br />
+        2.當點選編輯時，sentence欄位會充滿整個儲存格。<br />
+        3.當按下下一頁時，能夠顯示第一筆資料。<br />
+        4.當按下上一頁時，能夠顯示第一筆資料。<br />
+        5.當點選CBF110038_DDL1的項目時，會顯示其英文和中文。<br />
+        6.當點選測驗去時，能夠跳出題目。<br />
+        7.當題目完成後，能夠顯示其分數、結束及重玩。<br />
+        <h3>畫面展示</h3>
+        1.當點選刪除時<br /><img src="刪除資料之刪除訊息.png"><br />
+        2.當點選編輯時<br /><img src="欄位充滿.png"><br />
+        3.當按下下一頁時<br /><img src="當按下下一頁.png"><br />
+        4.當按下上一頁時<br /><img src="當按下上一頁.png"><br />
+        5.當點選CBF110038_DDL1的項目時<br /><img src="點選後顯示.png"><br />
+        6.當點選測驗去時<br /><img src="題目.png"><br />
+        7.當題目完成後<br /><img src="結束及重玩.png"><br />
+        <h2>個人心得與反思</h2>
+        在這裡，你可以分享你對於這次開發經驗的感想，以及你從中學到了什麼。
+        <h3>學習心得</h3>
+        學習到上述所提到的，雖然有些功能並沒有完整做出來，但我會繼續努力將其完成的。
+        <h3>未來展望</h3>
+        繼續努力，沒有完成的地方回去研究，將其想出來。
 </body>
 </html>
